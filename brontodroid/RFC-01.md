@@ -1,4 +1,4 @@
- # Brotodroid - Initial Review 
+ # Brontodroid - Initial Review 
 
  Over the past years we have seen the rise and controversies of the web development community and various frameworks, however, as time goes on the community is slowly uniting together again to tackle various issues like Electron and the need of a good desktop or mobile framework that helps them build native apps by only using web technologies like HTML5, CSS and JavaScript. Brontodroid is an attempt to answer that need for the mobile platform 'Android'. This RFC goes over what are the goals and philosophies behind it.
 
