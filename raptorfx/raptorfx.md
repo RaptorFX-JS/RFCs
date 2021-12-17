@@ -5,7 +5,7 @@ RaptorFX aims to centralise app development into one codebase while targetting m
 
 ## Core
 ### Standard Library
-RaptorFX while shipping a Deno instance, will also shit its own set of functions like Electron, Tauri or Neutralino to make it easier to work across platforms with ease. In addition to the standard library, we will provide platform exclusive feature plugins that only work either on mobile or desktop, if the said functionality work on both, we will ship it in standard library instead. The following is a list of functions with their description on what they do: 
+RaptorFX while shipping a Deno instance, will also ship its own set of functions like Electron, Tauri or Neutralino to make it easier to work across platforms with ease. In addition to the standard library, we will provide platform exclusive feature plugins that only work either on mobile or desktop, if the said functionality work on both, we will ship it in standard library instead. The following is a list of functions with their description on what they do: 
 
 #### Global API
 - `loadURL`: Loads the webpage from the provided URL onto current WebView.
@@ -19,7 +19,7 @@ RaptorFX while shipping a Deno instance, will also shit its own set of functions
 - `setWindowBarColor`: Set the color of the window accent color (on Windows 10+) and the status bar (on Android and iOS).
 - `exitWindow`: Destroys the current WebView in the window and proceeds to close the window. 
 - `nativeDialogueBuilder`: A Class to make customizable native dialogue boxes across platforms, these dialogues can include Icons, Texts, Buttons, Scrollbars, and Input fields.
-- `nativeNotificationBuilder`: A Class to deploy native notifications which can hold 
+- `nativeNotificationBuilder`: A Class to deploy native notifications which can hold text-based descriptions and titles and images as notification icons.
 	
 #### Desktop-Exclusive
 - `createNewWebView`: Creates a new WebView Window for use, similar to `createWindow()` from Electron.
@@ -43,4 +43,4 @@ The RaptorFX CLI is a tool to helps scaffhold and handle RaptorFX projects quick
 - `-f, --force`: Executes a command even if warnings were issue prior.
 
 ### Debug Client (RaptorFX Toolbox)
-Debug Clients are on-the-fly compilers for RaptorFX Projects to scaffhold or test packages anywhere at anytime. They will can compile apps on the fly while running them in a testing WebView which does share all the capabilities a normal RaptorFX App would, exceptions being a few functions will function differently, like `RaptorFX.exitWindow()`will now exit the current running app, instead of closing the entire toolbox app. 
+Debug Clients are on-the-fly compilers for RaptorFX Projects to scaffhold or test packages anywhere at anytime. They will can compile apps on the fly while running them in a testing WebView which does share all the capabilities a normal RaptorFX App would, exceptions being a few functions will function differently, like `RaptorFX.exitWindow()` will now exit the current running app, instead of closing the entire toolbox app. 
