@@ -1,2 +1,2 @@
 # RFCs
-Request for Comments (RFC) Repository for WebSmith.
+Request for Comments (RFC) Repository for the RaptorFX Project.
