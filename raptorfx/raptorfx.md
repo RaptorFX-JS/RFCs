@@ -26,6 +26,7 @@ RaptorFX while shipping a Deno instance, will also ship its own set of functions
 
 #### Mobile Exclusive
 - `showHudToast`: Shows a toast with provided text.
+- `setWindowOrientation`: Sets the orientation of the current window to either `PORTRAIT` or `LANDSCAPE`.
 - `nativeSnackbarBuilder`: A Class to make Android Snackbars.
 
 ### CLI
