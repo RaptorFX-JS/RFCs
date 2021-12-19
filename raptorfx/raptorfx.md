@@ -17,6 +17,7 @@ RaptorFX while shipping a Deno instance, will also ship its own set of functions
 - `setWindowTitle`: Sets the title of the current window the JS is being executed from.
 - `setWindowIcon`: Sets the icon of the current window the JS is being executed from.
 - `setWindowBarColor`: Set the color of the window accent color (on Windows 10+) and the status bar (on Android and iOS).
+- `minimizeWindow`: Minimizes the current WebView Window.
 - `exitWindow`: Destroys the current WebView in the window and proceeds to close the window. 
 - `nativeDialogueBuilder`: A Class to make customizable native dialogue boxes across platforms, these dialogues can include Icons, Texts, Buttons, Scrollbars, and Input fields.
 - `nativeNotificationBuilder`: A Class to deploy native notifications which can hold text-based descriptions and titles and images as notification icons.
