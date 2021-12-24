@@ -43,6 +43,7 @@ The RaptorFX CLI is a tool to helps scaffhold and handle RaptorFX projects quick
 - `-h, --help`: Provides syntax for a sub-command or a flag.
 - `-m, --mode`:	Release mode of how to build the app, possible values are `debug` and `release.`
 - `-f, --force`: Executes a command even if warnings were issue prior.
+- `--rfx_ver`: Sets the version of RaptorFX to use while generating project, format: `<version_number>-<release_channel>`; example: `0.1.0-alpha`.
 
 ### Debug Client (RaptorFX Toolbox)
 Debug Clients are on-the-fly compilers for RaptorFX Projects to scaffhold or test packages anywhere at anytime. They will can compile apps on the fly while running them in a testing WebView which does share all the capabilities a normal RaptorFX App would, exceptions being a few functions will function differently, like `RaptorFX.exitWindow()` will now exit the current running app, instead of closing the entire toolbox app. 
