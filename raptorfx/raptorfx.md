@@ -66,3 +66,4 @@ The RaptorFX CLI is a tool to helps scaffhold and handle RaptorFX projects quick
 
 ## Toolbox
 Toolbox is a cross-platform on-the-fly compiler for RaptorFX Projects to scaffhold or test projects anywhere at anytime. They will can compile apps on the fly while running them in a testing WebView which does share all the capabilities a normal RaptorFX App would, exceptions being a few functions will function differently, like `RaptorFX.Window.exit()` will now exit the current running app, instead of closing the entire toolbox app. 
+
