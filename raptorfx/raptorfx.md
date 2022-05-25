@@ -4,46 +4,65 @@
 RaptorFX aims to centralise app development into one codebase while targetting multiple platforms at once, we will make use of web technologies to make it easier for anyone to dive in and start developing. People may even contribute to the main codebase of RaptorFX if they wish to improve it in any way, shape, or form. 
 
 ## Core
-### Standard Library
-RaptorFX while shipping a Deno instance, will also ship its own set of functions like Electron, Tauri or Neutralino to make it easier to work across platforms with ease. In addition to the standard library, we will provide platform exclusive feature plugins that only work either on mobile or desktop, if the said functionality work on both, we will ship it in standard library instead. The following is a list of functions with their description on what they do: 
 
-#### Global API
-- `loadURL`: Loads the webpage from the provided URL onto current WebView.
-- `manageWindowMetadata`: Manages metadata of the current WebView window like Min/Max Sizes of Height/Width, is the Window Fullscreen, is it frameless, what is the window icon etc.
-- `injectCustomCSS`: Injects a CSS File onto current WebView.
-- `getSystemTheme`: Returns the System's current theme as either `LIGHT` or `DARK` depending on theme type respectively.
-- `getOS`: Returns the current operating system of the machine being used, possible return values are `WINDOWS`, `MACOS`, `LINUX`, `ANDROID` and `IOS`.
--  `getSystemLanguage`: Returns the language code (ex: `fr-FR`, `en_US`etc)  of the current default system language set for use.
-- `setWindowTitle`: Sets the title of the current window the JS is being executed from.
-- `setWindowIcon`: Sets the icon of the current window the JS is being executed from.
-- `setWindowBarColor`: Set the color of the window accent color (on Windows 10+) and the status bar (on Android and iOS).
-- `minimizeWindow`: Minimizes the current WebView Window.
-- `exitWindow`: Destroys the current WebView in the window and proceeds to close the window. 
-- `nativeDialogueBuilder`: A Class to make customizable native dialogue boxes across platforms, these dialogues can include Icons, Texts, Buttons, Scrollbars, and Input fields.
-- `nativeNotificationBuilder`: A Class to deploy native notifications which can hold text-based descriptions and titles and images as notification icons.
-	
-#### Desktop-Exclusive
-- `createNewWebView`: Creates a new WebView Window for use, similar to `createWindow()` from Electron.
+### API 
+RaptorFX while shipping a Deno instance, will also ship its own set of functions like Electron, Tauri or Neutralino to make it easier to work across platforms with ease. We also aim to blend in with existing Web APIs and Standards. The following is a list of classes, functions, enums, and related, all of which come under the namespace of `RaptorFX`, with their description on what they do: 
 
-#### Mobile Exclusive
-- `showHudToast`: Shows a toast with provided text.
-- `setWindowOrientation`: Sets the orientation of the current window to either `PORTRAIT` or `LANDSCAPE`.
-- `nativeSnackbarBuilder`: A Class to make Android Snackbars.
+#### Classes
+- `Clipboard`: Relates to user's clipboard (store of keyboard copy items).
+- `Notifications`: Manage notifications; push, group, pop.
+- `Window`: Window-related activites like Maximise, Minimize, and Position.
+- `System`: System related class which returns Architecture, OS, etc.
+
+#### Interfaces
+- `NotificationData`: 
+-- `title (string)`: Main Title of notification.
+-- `description (string)`: Description/Secondary Title of notification.
+-- `icon (url)`: URL of icon to show in notification.
+
+- `PositionData`:
+-- `x (number)`: Starting cordinate in X-Axis of Window.
+-- `y (number)`: Starting cordinate in Y-Axis of Window.
+-- `height (number)`: Height of Window.
+-- `width (number)`: Width of Window.
+
+#### Functions 
+- `Clipboard`: 
+-- `copy (content: string) [void]`: Push copy content to user's clipboard. 
+-- `cut (content: string) [void]`: Push cut content to user's clipboard.
+-- `read () [string]`: Reads and returns content from the user's clipboard.
+
+- `Notifications`:
+-- `build (object:  NotificationData) [void]`: Takes in `NotificationData`, to create pushable/referencable notification block.
+-- `push (data: NotificationData, mode: NotificationMode) [Promise]`: Pushes the notification built from data, with configuration and channel to send to.
+-- `createToast (data: String, length: ToastLength) [void]`: Creates a Toast with data provided. [*¹]
+
+- `Window`:
+-- `maximize () [void]`: Maximizes the context window.
+-- `minimize () [void]`: Minimizes the context Window.
+-- `exit (code: number) [void]`: Completely exits the context window with an exit code.
+-- `position (cords: PositionData) [PositionData]`: If given arguments, changes the position of the window, without any arguments, the current cordinates of window are returned as `PositionData`.
+
+- `System`:
+-- `arch () [string]`: Returns the architecture (`x86`, `arm64` etc.) of system as a string.
+-- `os () [string]`: Returns the operating system (`windows_11`, `android_12` etc.) of system as string.
+
+#### Variables
+- `LocalStorage`: Points to path to internal app storage, which could mean a folder under `$USER\LocalAppData\YourApp\` (on Windows), or `data/data/YourApp` (on Android).
+- `ExternalStorage`: Points to root of file system, usually `/mounted/0/` (on Android), or any absolute/relative path on other operating systems like Windows or Linux.
+
+#### Enums
+- `ToastLength`: Accepts `SHORT` and `LONG`, self-describing length of Toast displayed on screen. [*¹]
+- `NotificationMode`: Accepts `SINGLE` and `GROUP`, where `SINGLE` creates a new notification for each push, while `GROUP` collects it into a single grouped notification. 
+
+_Classes and Interfaces are available as `RaptorFX.<Name>`, functions as `RaptorFX.<ClassName>.<FunctionName>`, while variables as `RaptorFX.Variables.<VariableName>`, and enums as `RaptorFX.Enums.<EnumName>`._
+
+[*¹] refers to being exclusive to the mobile platform or either one of them, i.e either on Android or iOS.
 
 ### CLI
-The RaptorFX CLI is a tool to helps scaffhold and handle RaptorFX projects quickly and efficiently, it has several (sub)commands and flags listed below as part of the CLI:
-#### Subcommands:
-- `init`: Initializes an empty RaptorFX project with a git repository in it, and recreates every file and folder seen in `RaptorFX/Example-App` repository.	
-- `build`: Builds the final app for the platforms listed in the local manifest file. 
-- `debug`: Launches the debug client with the current app if there is any in the workspace folder.
-- `version`: Prints out the version of RaptorFX CLI you are using alongside if there are any future versions available.
-- `upgrade`: Upgrades the CLI and restores project templates if they are missing. 
+The RaptorFX CLI is a tool to helps scaffhold and handle RaptorFX projects quickly and efficiently, it has several commands and flags listed below as part of the CLI:
 
-#### Flags
-- `-h, --help`: Provides syntax for a sub-command or a flag.
-- `-m, --mode`:	Release mode of how to build the app, possible values are `debug` and `release.`
-- `-f, --force`: Executes a command even if warnings were issue prior.
-- `--rfx_ver`: Sets the version of RaptorFX to use while generating project, format: `<version_number>-<release_channel>`; example: `0.1.0-alpha`.
+[CLI Documentation/Specification on scrapped/on-hold; next design coming with next RFC.] 
 
-### Debug Client (RaptorFX Toolbox)
-Debug Clients are on-the-fly compilers for RaptorFX Projects to scaffhold or test packages anywhere at anytime. They will can compile apps on the fly while running them in a testing WebView which does share all the capabilities a normal RaptorFX App would, exceptions being a few functions will function differently, like `RaptorFX.exitWindow()` will now exit the current running app, instead of closing the entire toolbox app. 
+## Toolbox
+Toolbox is a cross-platform on-the-fly compiler for RaptorFX Projects to scaffhold or test projects anywhere at anytime. They will can compile apps on the fly while running them in a testing WebView which does share all the capabilities a normal RaptorFX App would, exceptions being a few functions will function differently, like `RaptorFX.Window.exit()` will now exit the current running app, instead of closing the entire toolbox app. 
