@@ -16,36 +16,36 @@ RaptorFX while shipping a Deno instance, will also ship its own set of functions
 
 #### Interfaces
 - `NotificationData`: 
--- `title (string)`: Main Title of notification.
--- `description (string)`: Description/Secondary Title of notification.
--- `icon (url)`: URL of icon to show in notification.
+    * `title (string)`: Main Title of notification.
+    * `description (string)`: Description/Secondary Title of notification.
+    * `icon (url)`: URL of icon to show in notification.
 
 - `PositionData`:
--- `x (number)`: Starting cordinate in X-Axis of Window.
--- `y (number)`: Starting cordinate in Y-Axis of Window.
--- `height (number)`: Height of Window.
--- `width (number)`: Width of Window.
+    * `x (number)`: Starting cordinate in X-Axis of Window.
+    * `y (number)`: Starting cordinate in Y-Axis of Window.
+    * `height (number)`: Height of Window.
+    * `width (number)`: Width of Window.
 
 #### Functions 
 - `Clipboard`: 
--- `copy (content: string) [void]`: Push copy content to user's clipboard. 
--- `cut (content: string) [void]`: Push cut content to user's clipboard.
--- `read () [string]`: Reads and returns content from the user's clipboard.
+    * `copy (content: string) [void]`: Push copy content to user's clipboard. 
+    * `cut (content: string) [void]`: Push cut content to user's clipboard.
+    * `read () [string]`: Reads and returns content from the user's clipboard.
 
 - `Notifications`:
--- `build (object:  NotificationData) [void]`: Takes in `NotificationData`, to create pushable/referencable notification block.
--- `push (data: NotificationData, mode: NotificationMode) [Promise]`: Pushes the notification built from data, with configuration and channel to send to.
--- `createToast (data: String, length: ToastLength) [void]`: Creates a Toast with data provided. [*¹]
+    * `build (object:  NotificationData) [void]`: Takes in `NotificationData`, to create pushable/referencable notification block.
+    * `push (data: NotificationData, mode: NotificationMode) [Promise]`: Pushes the notification built from data, with configuration and channel to send to.
+    * `createToast (data: String, length: ToastLength) [void]`: Creates a Toast with data provided. [*¹]
 
 - `Window`:
--- `maximize () [void]`: Maximizes the context window.
--- `minimize () [void]`: Minimizes the context Window.
--- `exit (code: number) [void]`: Completely exits the context window with an exit code.
--- `position (cords: PositionData) [PositionData]`: If given arguments, changes the position of the window, without any arguments, the current cordinates of window are returned as `PositionData`.
+    * `maximize () [void]`: Maximizes the context window.
+    * `minimize () [void]`: Minimizes the context Window.
+    * `exit (code: number) [void]`: Completely exits the context window with an exit code.
+    * `position (cords: PositionData) [PositionData]`: If given arguments, changes the position of the window, without any arguments, the current cordinates of window are returned as `PositionData`.
 
 - `System`:
--- `arch () [string]`: Returns the architecture (`x86`, `arm64` etc.) of system as a string.
--- `os () [string]`: Returns the operating system (`windows_11`, `android_12` etc.) of system as string.
+    * `arch () [string]`: Returns the architecture (`x86`, `arm64` etc.) of system as a string.
+    * `os () [string]`: Returns the operating system (`windows_11`, `android_12` etc.) of system as string.
 
 #### Variables
 - `LocalStorage`: Points to path to internal app storage, which could mean a folder under `$USER\LocalAppData\YourApp\` (on Windows), or `data/data/YourApp` (on Android).
