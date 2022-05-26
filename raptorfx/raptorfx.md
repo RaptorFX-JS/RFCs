@@ -1,5 +1,7 @@
 ﻿# RaptorFX
 ![RaptorFX Logo - by ArathainFarqou and LePichu](https://cdn.discordapp.com/attachments/890845937243684886/921414193423466536/rfx_text_logo.png)
+![Our Motive!](https://cdn.discordapp.com/attachments/890845937243684886/979286337016430632/sub_text.png)
+   
 ## Aim 
 RaptorFX aims to centralise app development into one codebase while targetting multiple platforms at once, we will make use of web technologies to make it easier for anyone to dive in and start developing. People may even contribute to the main codebase of RaptorFX if they wish to improve it in any way, shape, or form. 
 
