@@ -44,6 +44,7 @@ RaptorFX while shipping a Deno instance, will also ship its own set of functions
     * `minimize () [void]`: Minimizes the context Window.
     * `exit (code: number) [void]`: Completely exits the context window with an exit code.
     * `position (cords: PositionData) [PositionData]`: If given arguments, changes the position of the window, without any arguments, the current cordinates of window are returned as `PositionData`.
+    * `statusBarColor (hex: string) [void]`: Sets the color of the status bar/window accent color from the provided hex color as paramater. 
 
 - `System`:
     * `arch () [string]`: Returns the architecture (`x86`, `arm64` etc.) of system as a string.
