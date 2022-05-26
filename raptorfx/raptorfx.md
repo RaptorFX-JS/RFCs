@@ -48,6 +48,7 @@ RaptorFX while shipping a Deno instance, will also ship its own set of functions
 - `System`:
     * `arch () [string]`: Returns the architecture (`x86`, `arm64` etc.) of system as a string.
     * `os () [string]`: Returns the operating system (`windows_11`, `android_12` etc.) of system as string.
+    * `locale () [string]`: Returns the system's locale, example: `en_US`, `fr_FR`, `hi_IN` etc.
 
 #### Variables
 - `LocalStorage`: Points to path to internal app storage, which could mean a folder under `$USER\LocalAppData\YourApp\` (on Windows), or `data/data/YourApp` (on Android).
