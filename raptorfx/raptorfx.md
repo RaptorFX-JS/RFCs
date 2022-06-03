@@ -27,6 +27,8 @@ RaptorFX, while shipping a Deno instance, will also ship its own set of function
     * `y (number)`: Starting coordinate in the Y-Axis of the Window.
     * `height (number)`: Height of the Window.
     * `width (number)`: Width of the Window.
+- `WindowBarMode`:
+    * `mode`: Accepts either `"set"` or `"get"` as value.
 
 #### Functions 
 - `Clipboard`: 
@@ -44,7 +46,7 @@ RaptorFX, while shipping a Deno instance, will also ship its own set of function
     * `minimize () [void]`: Minimizes the context window.
     * `exit (code: number) [void]`: Completely exits the context window with an exit code.
     * `position (newPosition: PositionData) [PositionData]`: If given arguments, changes the position of the window, without any arguments, the current cordinates of window are returned as `PositionData`.
-    * `statusBarColor (hex: string) [void]`: Sets the color of the status bar/window accent color from the provided hex color as paramater. 
+    * `statusBarColor (hex: string, mode?: WindowBarMode) [string]`: Sets or gets/returns the color of the status bar/window accent color if provided a hex color as paramater, defaults to set mode. 
 
 - `System`:
     * `arch () [string]`: Returns the architecture (`x86`, `arm64` etc.) of the system as a string.
