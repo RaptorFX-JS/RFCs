@@ -30,9 +30,9 @@ RaptorFX, while shipping a Deno instance, will also ship its own set of function
 
 #### Functions 
 - `Clipboard`: 
-    * `copy (content: string) [void]`: Pushes copy content to user's clipboard. 
-    * `cut (content: string) [void]`: Pushes cut content to user's clipboard.
-    * `read () [string]`: Reads and returns content from the user's clipboard.
+    * `copy () ['type/text' | 'type/image']`: Copies contents of user's clipboard. 
+    * `cut () ['type/text' | 'type/image']`: Cuts content from user's clipboard and empties it..
+    * `push (content: 'type/text' | 'type/image') [void]`: Pushed custom data to user clipboard.
 
 - `Notifications`:
     * `push (data: NotificationData, mode: NotificationMode) [Promise]`: Pushes the notification built from data, with the given configuration and channel to send to.
