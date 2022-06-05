@@ -59,7 +59,7 @@ RaptorFX, while shipping a Deno instance, will also ship its own set of function
 - `NotificationMode`: Accepts `SINGLE` and `GROUP`, where `SINGLE` creates a new notification for each push, while `GROUP` collects it into a single grouped notification. 
 - `WindowBarMode`: Accepts `SET` and `GET`, where `SET` would make the function overwrite the current color of status bar if provided and return the hex provided, otherwise `GET` will simply return the current color without modifying.
 
-_Classes and Interfaces are available as `RaptorFX.<Name>`, functions as `RaptorFX.<ClassName>.<FunctionName>`, while variables as `RaptorFX.Variables.<VariableName>`, and enums as `<EnumName>.<EnumValue>`._
+_Classes and Interfaces are available as `<InterfaceName>`, functions as `RaptorFX.<ClassName>.<FunctionName>`, while variables as `RaptorFX.Variables.<VariableName>`, and enums as `<EnumName>.<EnumValue>`._
 
 [*¹] refers to being exclusive to the mobile platform, or either one of them (i.e either on Android or iOS).
 
