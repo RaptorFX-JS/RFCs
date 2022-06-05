@@ -31,7 +31,7 @@ RaptorFX, while shipping a Deno instance, will also ship its own set of function
 #### Functions 
 - `Clipboard`: 
     * `copy () ['type/text' | 'type/image']`: Copies contents of user's clipboard. 
-    * `cut () ['type/text' | 'type/image']`: Cuts content from user's clipboard and empties it..
+    * `cut () ['type/text' | 'type/image']`: Cuts content from user's clipboard and empties it.
     * `push (content: 'type/text' | 'type/image') [void]`: Pushed custom data to user clipboard.
 
 - `Notifications`:
