@@ -35,7 +35,6 @@ RaptorFX, while shipping a Deno instance, will also ship its own set of function
     * `read () [string]`: Reads and returns content from the user's clipboard.
 
 - `Notifications`:
-    * `build (object:  NotificationData) [void]`: Takes in `NotificationData`, to create a pushable/referencable notification block.
     * `push (data: NotificationData, mode: NotificationMode) [Promise]`: Pushes the notification built from data, with the given configuration and channel to send to.
     * `createToast (data: String, length: ToastLength) [void]`: Creates a Toast with data provided. [*¹]
 
