@@ -35,14 +35,14 @@ RaptorFX, while shipping a Deno instance, will also ship its own set of function
     * `push (content: 'type/text' | 'type/image') [void]`: Pushes custom data to user clipboard.
 
 - `Notifications`:
-    * `push (data: NotificationData, mode: NotificationMode) [Promise]`: Pushes the notification built from data, with the given configuration and channel to send to.
+    * `push (data: NotificationData, mode: NotificationMode) [void]`: Pushes the notification built from data, with the given configuration and channel to send to.
     * `createToast (data: String, length: ToastLength) [void]`: Creates a Toast with data provided. [*¹]
 
 - `Window`:
     * `maximize () [void]`: Maximizes the context window.
     * `minimize () [void]`: Minimizes the context window.
     * `exit (code: number) [void]`: Completely exits the context window with an exit code.
-    * `position (newPosition: PositionData) [PositionData]`: If given arguments, changes the position of the window, without any arguments, the current cordinates of window are returned as `PositionData`.
+    * `position (newPos: PositionData) [void]`: If given arguments, changes the position of the window, without any arguments, the current cordinates of window are returned as `PositionData`.
     * `statusBarColor (mode: WindowBarMode, hex?: String) [string | void]`: Sets or gets/returns the color of the status bar/window accent color if provided a hex color as paramater, defaults to set mode where it will return void instead of string. 
 
 - `System`:
